@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.static('public'))
 
 const quizController = require('./controllers/quiz.js');
-app.use('/', quizController);
+app.use('/quiz', quizController);
 
 postgres.connect();
 
