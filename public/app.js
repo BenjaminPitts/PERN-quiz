@@ -20,7 +20,7 @@ class App extends React.Component {
 
     handleSubmit = (event) => {
       // event.preventDefault()
-      axios.post('/api', this.state).then((response) => {
+      axios.post('/', this.state).then((response) => {
         console.log(response.data)
         this.setState({
           quizq: [response.data],
@@ -36,20 +36,20 @@ class App extends React.Component {
       event.preventDefault()
       event.target.reset()
       const id = event.target.id
-      axios.put('/api/' + id, this.state).then((response) => {
+      axios.put('/' + id, this.state).then((response) => {
         this.getQuestion()
       })
     }
 
     deleteQuestion = (event) => {
-      axios.delete('/api/' + event.target.value).then((response) => {
+      axios.delete('/' + event.target.value).then((response) => {
         this.getQuestion()
       })
     }
 
     getQuestion = () => {
       axios
-      .get('/api')
+      .get('/')
       .then(
         (response) => this.setState({
           quizq: response.data,
