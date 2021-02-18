@@ -20,7 +20,7 @@ class App extends React.Component {
 
     handleSubmit = (event) => {
       // event.preventDefault()
-      axios.post('https://quiz-js-pernstack.herokuapp.com/quiz', this.state).then((response) => {
+      axios.post('/quiz', this.state).then((response) => {
         console.log(response.data)
         this.setState({
           quizq: [response.data],
@@ -36,20 +36,20 @@ class App extends React.Component {
       event.preventDefault()
       event.target.reset()
       const id = event.target.id
-      axios.put('https://quiz-js-pernstack.herokuapp.com/quiz/' + id, this.state).then((response) => {
+      axios.put('/quiz/' + id, this.state).then((response) => {
         this.getQuestion()
       })
     }
 
     deleteQuestion = (event) => {
-      axios.delete('https://quiz-js-pernstack.herokuapp.com/quiz/' + event.target.value).then((response) => {
+      axios.delete('/quiz/' + event.target.value).then((response) => {
         this.getQuestion()
       })
     }
 
     getQuestion = () => {
       axios
-      .get('https://quiz-js-pernstack.herokuapp.com/quiz')
+      .get('/quiz')
       .then(
         (response) => this.setState({
           quizq: response.data,
