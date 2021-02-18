@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.static('public'))
 
 const quizController = require('./controllers/quiz.js');
- app.use('https://quiz-js-pernstack.herokuapp.com/quiz', quizController);
+ app.use('/quiz', quizController);
 
 postgres.connect();
 
