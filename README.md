@@ -1,1 +1,1 @@
-# quiz-js
+Quiz.js was originally made with Ruby on Rails with React on the frontend and a PostgreSQL database. Unable to deploy to Heroku, I refactored it into a PERN stack which works locally but was still unable to deploy on Heroku. However, it still serves as a usefull PERN template.
